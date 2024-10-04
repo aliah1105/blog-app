@@ -1,7 +1,23 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 
 # Create your views here.
 
 def Home(request):
-    return HttpResponse("Hello from blog app")
+    context = {
+        "articles": [
+            {
+                "title": "first articl",
+                "description": "this is a first description"
+            },
+            {
+                "title": "second articl",
+                "description": "this is a second description"
+            },
+            {
+                "title": "third articl",
+                "description": "this is a third description"
+            }
+        ]
+
+    }
+    return render(request, 'blog/home.html', context)
