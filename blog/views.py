@@ -1,23 +1,11 @@
 from django.shortcuts import render
+from .models import Article
 
 # Create your views here.
 
 def Home(request):
+    articles = Article.objects.filter(status="p").order_by('-published')
     context = {
-        "articles": [
-            {
-                "title": "first articl",
-                "description": "this is a first description"
-            },
-            {
-                "title": "second articl",
-                "description": "this is a second description"
-            },
-            {
-                "title": "third articl",
-                "description": "this is a third description"
-            }
-        ]
-
+        "articles": articles
     }
     return render(request, 'blog/home.html', context)

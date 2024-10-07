@@ -6,9 +6,15 @@
     <title>روزمرگی</title>
 </head>
 <body>
-    {% for article in articles %}
-        <h1>{{article.title}}</h1>
+    <center>
+        {% for article in articles %}
+    <article>
+        <img src="{{article.thumbnail.url}}" alt="article image" width="500px" height="500px">
+        <a href="{{article.slug}}"><h1>{{article.title}}</h1></a>
+        <small>{{article.published}}</small>
         <p>{{article.description}}</p>
+    </article>
     {% endfor %}
+    </center>
 </body>
 </html>
