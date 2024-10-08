@@ -1,24 +1,20 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>روزمرگی</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
 
 <body>
     <center>
-        {% for article in articles %}
         <article>
             <img src="{{article.thumbnail.url}}" alt="article image" width="500px" height="500px">
-            <a href="{% url 'blog:detail' article.slug %}">
-                <h1>{{article.title}}</h1>
-            </a>
+            <h1>{{article.title}}</h1>
             <small>{{article.published}}</small>
             <p>{{article.description}}</p>
         </article>
-        {% endfor %}
     </center>
 </body>
 
